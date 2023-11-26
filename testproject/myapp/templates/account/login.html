@@ -1,0 +1,17 @@
+{% extends 'layout/base.html' %}
+{% load humanize %}
+{% block title%}Login{% endblock title%}
+{% block content %}
+
+    <div class="row">
+        <div class="col lo-6 offset-lg-3">
+            <h1>Log in</h1>
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock content %}

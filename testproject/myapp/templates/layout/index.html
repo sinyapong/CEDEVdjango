@@ -1,0 +1,22 @@
+{% extends 'layout/base.html' %}
+{% block title%}HOme{% endblock title%}
+{% block content %}
+
+<h1>Hello World</h1>
+    {% if id == '001' and name == 'Shomchai' %}
+        <h2>Access Ok</h2>
+    {% else %}
+        <h2>Access Error</h2>
+    {% endif %}
+
+    <h2>{{id}}</h2>
+    <h2>{{name}}</h2>
+    <h2>{{email}}</h2>
+
+    {% for ac in activities %}
+        <li>{{ ac }}</li>
+    {% endfor %}
+
+    <a href="{% url 'book:index' %}">Goto Book Page</a>
+
+{% endblock content %}
